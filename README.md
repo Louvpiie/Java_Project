@@ -21,7 +21,7 @@ para rodar este projeto em sua maquina você precisará:
 ### Contribuição
 - Vinicius Costa Nunes - [Github](https://github.com/V1N1NUNES)
 - Leticia Nery Silva - [Github](https://github.com/Louvpiie)
-- Ramom Miguel Rosa Pereira Ataides - [Github](https://github.com/RamonMiguel717)
+- Ramon Miguel Rosa Pereira Ataides - [Github](https://github.com/RamonMiguel717)
 - João Felipe Alves de Albuquerque Silva -[Github](https://github.com/jolipee)
 <br>
 
