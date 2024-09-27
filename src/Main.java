@@ -72,7 +72,7 @@ public class Main {
                     }
                     listarProjetos(projetos);
                     System.out.print("Digite o número do projeto para adicionar o funcionário: ");
-                    int numeroProjeto = scanner.nextInt(); // Declare numeroProjeto outside the if block
+                    int numeroProjeto = scanner.nextInt(); // Declara numeroProjeto fora do if
                     scanner.nextLine(); // Consumir a quebra de linha
 
                     if (numeroProjeto >= 1 && numeroProjeto <= projetos.size()) {
@@ -101,7 +101,7 @@ public class Main {
                     }
                     listarProjetos(projetos);
                     System.out.print("Digite o número do projeto para remover o funcionário: ");
-                    numeroProjeto = scanner.nextInt(); // Reuse numeroProjeto variable
+                    numeroProjeto = scanner.nextInt(); // variavel numeroProjeto
                     scanner.nextLine(); // Consumir a quebra de linha
 
                     if (numeroProjeto >= 1 && numeroProjeto <= projetos.size()) {
