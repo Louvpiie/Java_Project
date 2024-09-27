@@ -3,14 +3,14 @@ import java.util.ArrayList;
 public class Funcionario {
     private String nome;
     private String cargo;
-    private float salario;
+    private double salario;
     /*
      * Utilizei este metodo para poder armazenar todos os funcionarios criados dentro de uma Array, quando for necessario fazer pesquisa de funcionario faça-a pelo 
      * atributo "Nome".
      */
     private static ArrayList<Funcionario> funcionarios = new ArrayList<>();
 
-    public Funcionario(String nome, String cargo, float salario) {
+    public Funcionario(String nome, String cargo, double salario) {
         this.nome = nome;
         this.cargo = cargo;
         this.salario = salario;
@@ -37,6 +37,14 @@ public class Funcionario {
             }
         }
         System.out.println("Funcionário " + nome + " não foi encontrado.");
+    }
+    
+    public String getNome() {
+        return nome;
+    }
+    
+    public String getCargo() {
+        return cargo;
     }
 
     public String getInfo() {
