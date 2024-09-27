@@ -1,6 +1,6 @@
 # Sistema de gerenciamento de Funcionários e projetos
 
-## Índice
+## * Índice
 - Descrição
 - Instalação/Uso
 - Contribuição
