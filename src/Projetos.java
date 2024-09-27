@@ -1,38 +1,59 @@
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDate;
 
-public class Projetos {
-    // A classe Projeto deve ter nome, prazo e um objeto Funcionario responsável. .
-    // Implemente dois construtores para cada classe, um com todos os atributos e outro com um número reduzido de parâmetros.
-
-    //atributos da classe
+public class Projeto {
     private String nome;
-    private SimpleDateFormat  prazo = new SimpleDateFormat("dd/MM/yy"); // como armazenar uma data do jeito certo
-    private Funcionarios responsavel = new Funcionarios();
+    private LocalDate prazo;
+    private Funcionario responsavel;
 
-
-    //construtor que inicializa todos os parâmetros
-    public Projeto (String nome, SimpleDateFormat Prazo, Funcionarios responsavel)
-    {
+    // Construtor com todos os atributos
+    public Projeto(String nome, LocalDate prazo, Funcionario responsavel) {
         this.nome = nome;
-        this.prazo = Prazo;
+        this.prazo = prazo;
         this.responsavel = responsavel;
     }
 
-    //construtor com número reduzido de parâmetros
-    public Projeto(String nome, SimpleDateFormat Prazo)
-    {
+    // Construtor com parâmetros reduzidos
+    public Projeto(String nome, LocalDate prazo) {
+        this(nome, prazo, null);
+    }
+
+    // Getters e Setters
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
         this.nome = nome;
-        this.prazo = Prazo;
-        this.responsavel = "responsavel não informado";
     }
 
-
-    //getters e setters
-    public String getNomeResponsavel(Funcionario.Nome Responsavel){
-         responsavel = Responsavel;
+    public LocalDate getPrazo() {
+        return prazo;
     }
 
+    public void setPrazo(LocalDate prazo) {
+        this.prazo = prazo;
+    }
 
+    public Funcionario getResponsavel() {
+        return responsavel;
+    }
 
+    public void setResponsavel(Funcionario responsavel) {
+        this.responsavel = responsavel;
+    }
+
+    // Método para adicionar um funcionário ao projeto
+    public void adicionarFuncionario(Funcionario funcionario) {
+        this.responsavel = funcionario;
+    }
+
+    // Método para remover o funcionário do projeto
+    public void removerFuncionario() {
+        this.responsavel = null;
+    }
+
+    // Método para validar se o prazo é maior que a data atual
+    public boolean validarPrazo() {
+        return this.prazo.isAfter(LocalDate.now());
+    }
 }
