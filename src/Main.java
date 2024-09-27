@@ -1,4 +1,4 @@
-import java.time.LocalDate; //acho que esse tem que mudar
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -9,7 +9,7 @@ public class Main {
         Funcionario funcionario1 = new Funcionario("João", "Desenvolvedor", 5000.0);
 
         // Criando um projeto
-        Projeto projeto1 = new Projeto("Projeto X", LocalDate.of(2024, 12, 31), funcionario1);
+        Projeto projeto1 = new Projeto("Projeto X", SimpleDateFormat.of(2024, 12, 31), funcionario1);
 
         // Validando o prazo do projeto
         if (projeto1.validarPrazo()) {
