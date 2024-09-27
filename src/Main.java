@@ -1,4 +1,4 @@
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -9,7 +9,7 @@ public class Main {
         Funcionario funcionario1 = new Funcionario("João", "Desenvolvedor", 5000.0);
 
         // Criando um projeto
-        Projeto projeto1 = new Projeto("Projeto X", SimpleDateFormat.of(2024, 12, 31), funcionario1);
+        Projeto projeto1 = new Projeto("Projeto X", LocalDate.of(2024, 12, 31), funcionario1);
 
         // Validando o prazo do projeto
         if (projeto1.validarPrazo()) {
@@ -72,7 +72,7 @@ public class Main {
                     }
                     listarProjetos(projetos);
                     System.out.print("Digite o número do projeto para adicionar o funcionário: ");
-                    int numeroProjeto = scanner.nextInt(); // Declara numeroProjeto fora do if
+                    int numeroProjeto = scanner.nextInt(); // Declare numeroProjeto outside the if block
                     scanner.nextLine(); // Consumir a quebra de linha
 
                     if (numeroProjeto >= 1 && numeroProjeto <= projetos.size()) {
@@ -101,7 +101,7 @@ public class Main {
                     }
                     listarProjetos(projetos);
                     System.out.print("Digite o número do projeto para remover o funcionário: ");
-                    numeroProjeto = scanner.nextInt(); // variavel numeroProjeto
+                    numeroProjeto = scanner.nextInt(); // Reuse numeroProjeto variable
                     scanner.nextLine(); // Consumir a quebra de linha
 
                     if (numeroProjeto >= 1 && numeroProjeto <= projetos.size()) {
