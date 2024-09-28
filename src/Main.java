@@ -32,7 +32,7 @@ public class Main {
         int opcao;
 
         do {
-            System.out.println("\nGerenciamento de Projetos e Funcionários:\n\n");
+            System.out.println("\nGERENCIAMENTO DE FUNCIONARIOS E PROJETOS:\n");
             System.out.println("1. Criar novo projeto");
             System.out.println("2. Adicionar funcionário a um projeto");
             System.out.println("3. Remover funcionário de um projeto");
