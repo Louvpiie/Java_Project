@@ -177,14 +177,13 @@ public class Main {
                 projetos.remove(i);
                 System.out.println("Projeto " + nomeProjeto + " excluído com sucesso.");
                 projetoEncontrado = true;
-                break; // Encerra o loop após a remoção
+                break;
             }
         }
     
         if (!projetoEncontrado) {
             System.out.println("Projeto não encontrado.");
         }
-        scanner.close();
     }    
 }
     
