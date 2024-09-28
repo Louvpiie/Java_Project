@@ -12,9 +12,7 @@ public class Main {
         Projeto projeto1 = new Projeto("Projeto X", LocalDate.of(2024, 12, 31), funcionario1);
 
         // Validando o prazo do projeto
-        if (projeto1.validarPrazo()) {
-            System.out.println("O prazo do projeto é válido.");
-        } else {
+        if (projeto1.validarPrazo() == false) {
             System.out.println("O prazo do projeto não é válido.");
         }
 
@@ -32,13 +30,15 @@ public class Main {
         // Criando um menu de opções
         Scanner scanner = new Scanner(System.in);
         int opcao;
+
         do {
             System.out.println("\nMenu:");
             System.out.println("1. Criar novo projeto");
             System.out.println("2. Adicionar funcionário a um projeto");
             System.out.println("3. Remover funcionário de um projeto");
             System.out.println("4. Listar projetos");
-            System.out.println("5. Sair");
+            System.out.println("5. Excluir projeto");
+            System.out.println("6. Sair");
             System.out.print("Digite a opção desejada: ");
             opcao = scanner.nextInt();
             scanner.nextLine(); // Consumir a quebra de linha
@@ -121,22 +121,26 @@ public class Main {
                     }
                     listarProjetos(projetos);
                     break;
-
+                
                 case 5:
-                    System.out.println("Saindo do programa.");
+                ExcluirProjeto(projetos);
+                break;
+
+                case 6:
+                    System.out.println("Saindo do programa...");
                     break;
 
                 default:
                     System.out.println("Opção inválida.");
             }
-        } while (opcao != 5);
+        } while (opcao != 6);
 
         scanner.close();
     }
 
     private static void listarProjetos(List<Projeto> projetos) {
         if (projetos.isEmpty()) {
-            System.out.println("Não existem projetos cadastrados.");
+            System.out.println("Não existem projetos cadastrados.\n");
             return;
         }
 
@@ -149,4 +153,38 @@ public class Main {
             }
         }
     }
+    private static void ExcluirProjeto(List<Projeto> projetos) {
+        Scanner scanner = new Scanner(System.in);
+    
+        if (projetos.isEmpty()) {
+            System.out.println("Não existem projetos criados.\n");
+            return;
+        }
+    
+        System.out.print("Digite o nome do projeto que deseja excluir: \n");
+        for (int i = 0; i < projetos.size(); i++) {
+            Projeto projeto = projetos.get(i);
+            System.out.println((i + 1) + ". " + projeto.getNome() + " - Prazo: " + projeto.getPrazo());
+            if (projeto.getResponsavel() != null) {
+                System.out.println("   Responsável: " + projeto.getResponsavel().getNome() + " (" + projeto.getResponsavel().getCargo() + ")");
+            }
+        }
+        String nomeProjeto = scanner.nextLine();
+    
+        boolean projetoEncontrado = false;
+        for (int i = 0; i < projetos.size(); i++) {
+            if (projetos.get(i).getNome().equals(nomeProjeto)) {
+                projetos.remove(i);
+                System.out.println("Projeto " + nomeProjeto + " excluído com sucesso.");
+                projetoEncontrado = true;
+                break; // Encerra o loop após a remoção
+            }
+        }
+    
+        if (!projetoEncontrado) {
+            System.out.println("Projeto não encontrado.");
+        }
+        scanner.close();
+    }    
 }
+    
